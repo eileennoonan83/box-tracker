@@ -60,7 +60,8 @@ export class PaymentMethodSelectComponent implements OnInit {
                     this.boxService.setBoxProfile(box);
                     this.router.navigate(["/payment.newCreditCard"]);                 },
                 (err: Response) => {
-                    dialogs.alert("Error: "+JSON.stringify(err));
+                    // don't need to do anything with this error
+                    // it's just a convenience
                     this.router.navigate(["/payment.newCreditCard"]); 
                 }
             )
