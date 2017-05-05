@@ -1,0 +1,75 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+For example, the following CSS rule changes the font size of all UI
+components that have the btn class name.
+*/
+@import 'nativescript-theme-core/css/core.light.css';
+@import url("~/platform.css");
+.btn {
+  font-size: 18;
+}
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+/*Page {
+    background-color: white;
+    font-size: 15;
+}
+*/
+TextField {
+  padding: 10;
+  font-size: 13;
+  margin: 10px;
+}
+.card {
+  margin: 10px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid black;
+  border-radius: 3px;
+  border-color: #51b487;
+  border-width: 1px;
+}
+.btn.btn-primary {
+  background-color: #6596aa;
+}
+.btn.btn-primary.btn-danger {
+  background-color: #f4645f;
+}
+.btn.btn-danger {
+  background-color: #f4645f;
+}
+.table .table-header,
+.table .table-footer {
+  font-weight: bold !important;
+  font-size: 18 !important;
+}
+.table .table-header {
+  background-color: #a9a9a9;
+}
+.table .table-footer {
+  background-color: #6596aa;
+}
+.table .table-row .table-cell {
+  border-color: black;
+  border-width: 1px;
+  padding: 5px;
+}
+.login-form {
+  vertical-align: center;
+}
+.page-footer {
+  background-color: #a9a9a9;
+  width: 100%;
+}
+DrawingPad {
+  border-width: 1px;
+  border-color: black;
+}

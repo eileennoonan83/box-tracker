@@ -1,0 +1,21 @@
+<StackLayout class="invoice">
+    <Label class="h2" text="Invoice"></Label>
+    <StackLayout class="table" [rows]="invoiceBoxRows">
+        <GridLayout class="table-header table-row" columns="*,*,*,*">
+            <Label class="table-cell" text="Label" col="0"></Label>
+            <Label class="table-cell" text="Quantity" col="1"></Label>
+            <Label class="table-cell" text="Cost" col="2"></Label>
+            <Label class="table-cell" text="Total" col="3"></Label>
+        </GridLayout>
+        <GridLayout class="table-body table-row" *ngFor="let box of boxes; let b = index" columns="*,*,*,*" rows="auto">
+            <Label class="table-cell" [text]="box.label" textWrap="true" col="0"></Label>
+            <Label class="table-cell" [text]="box.quantity" col="1"></Label>
+            <Label class="table-cell" [text]="box.cost / 100 | currency:'USD':true" col="2"></Label>
+            <Label class="table-cell" [text]="box.cost * box.quantity / 100 | currency:'USD':true" col="3"></Label>
+        </GridLayout>
+        <GridLayout class="table-footer table-row" columns="*,*,*,*">
+            <Label class="table-cell" text="TOTAL" col="0" colSpan="3"></Label>
+            <Label class="table-cell" [text]="total / 100 | currency:USD:true" col="3"></Label>
+        </GridLayout>
+    </StackLayout>
+</StackLayout>

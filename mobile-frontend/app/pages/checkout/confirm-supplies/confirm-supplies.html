@@ -1,0 +1,30 @@
+<GridLayout rows="*, auto">
+    <ScrollView row="0">
+        <StackLayout horizontalAlignment="center" class="m-10">
+            <ActionBar class="action-bar" title="Confirm Supplies"></ActionBar>
+    
+            <StackLayout row="0" rows="auto">
+
+                <StackLayout row="0">
+                    <box-tracker-invoice [boxes]="boxes" [total]="total"></box-tracker-invoice>
+                </StackLayout>
+
+                <Label row="1" class="h2" text="Is this correct?"></Label>
+
+                <StackLayout orientation="horizontal" row="2" rows="*">
+                    <Button text="No, Make Corrections"
+                            (tap)="makeCorrections()" 
+                            horizontalAlignment="left"
+                            class="btn btn-primary">
+                    </Button>
+                    <Button text="Yes, Go To Payment"
+                            (tap)="confirm()"
+                            horizontalAlignment="right"
+                            class="btn btn-primary">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    <box-tracker-footer></box-tracker-footer>
+</GridLayout>

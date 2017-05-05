@@ -1,0 +1,141 @@
+<ScrollView>
+    <GridLayout rows="*, auto">
+        <StackLayout row="0" class="m-10 form">
+            <ActionBar class="action-bar" title="New Credit Card"></ActionBar>
+            <Label class="text" textWrap="true" text="Credit card info is processed through a secure third party payment provider. Sensitive information is not stored by AAA."></Label>   
+
+            <GridLayout columns="*,*,*" [rows]="rows">
+
+                <Label row="0" col="0" text="Name"></Label>
+                <TextField 
+                    [(ngModel)]="card.cardHolderName" 
+                    row="0"
+                    col="1" 
+                    colspan="2"
+                    autocapitalizationType="words"
+                    autocorrect="false">
+                </TextField>
+
+                <Label row="1" text="Card #"></Label>
+                <TextField 
+                    [ngModel]="cardNumberDisplay"
+                    (ngModelChange)="cardNumberChange($event)"
+                    keyboardType="number" 
+                    row="1" 
+                    col="1" 
+                    colspan="2" 
+                    autocorrect="false">
+                </TextField>
+
+                <Label row="2" text="Expires" ></Label>
+                <TextField 
+                    [ngModel]="expiresDisplay" 
+                    (ngModelChange)="expiresChange($event)" 
+                    keyboardType="number"
+                    row="2" 
+                    col="1" 
+                    hint="mm / yy" 
+                    autocorrect="false">
+                </TextField>
+
+                <Label row="3" text="CVV / CVV2"></Label>
+                <TextField
+                    [(ngModel)]="card.cvv"
+                    keyboardType="number"
+                    row="3"
+                    col="1"
+                    colspan="2"
+                    autocorrect="false">
+                </TextField>
+
+                <Label row="4" text="Type"></Label>
+                <ListPicker
+                    [(ngModel)]="card.type"
+                    [items]="cardTypes"
+                    row="4"
+                    col="1"
+                    colspan="2"
+                    >
+                </ListPicker>
+
+                <Label row="5" class="h2" text="Billing Info" col="0" colspan="1"></Label>
+                <Button (tap)="clearBillingInfo()" class="m-l-10" horizontalAlignment="left" text="Clear ..." row="5" col="1" colSpan="1"></Button>
+
+                <Label row="6" text="Name"></Label>
+                <TextField
+                    [(ngModel)]="card.billing.name"
+                    row="6"
+                    col="1"
+                    colspan="2"
+                    autocorrect="false">
+                </TextField>
+
+                <Label row="7" text="Address"></Label>
+                <TextField
+                    [(ngModel)]="card.billing.address"
+                    row="7"
+                    col="1"
+                    colspan="2"
+                    autocorrect="false">
+                </TextField>
+                
+                <Label row="8" text="Address 2"></Label>
+                <TextField
+                    [(ngModel)]="card.billing.address2"
+                    row="8"
+                    col="1"
+                    colspan="2"
+                    autocorrect="false">
+                </TextField>
+
+                <Label row="9" text="City"></Label>
+                <TextField
+                    [(ngModel)]="card.billing.city"
+                    row="9"
+                    col="1"
+                    colspan="2"
+                    autocorrect="false">
+                </TextField>
+
+                <Label row="10" text="State"></Label>
+                <TextField
+                    [(ngModel)]="card.billing.state"
+                    row="10"
+                    col="1"
+                    colspan="2"
+                    hint='Two digit code, e.g., "MN", "WI", "IA"'
+                    autocorrect="false">
+                </TextField>
+
+                <Label row="11" text="Zip"></Label>
+                <TextField
+                    [(ngModel)]="card.billing.zip"
+                    row="11"
+                    col="1"
+                    keyboardType="numeric"
+                    colspan="2"
+                    autocorrect="false">
+                </TextField>
+
+                <Label row="12" text="Country"></Label>
+                <TextField
+                    [(ngModel)]="card.billing.country"
+                    row="12"
+                    col="1"
+                    colspan="2"
+                    autocorrect="false"
+                    hint='Two digit code e.g., "US", "CA", "MX"'>
+                </TextField>
+
+                <Button class="btn btn-primary" colSpan="3" row="13" text="Submit" (tap)="onSubmit()"></Button>
+            </GridLayout>
+
+            <ActivityIndicator [busy]="loading"></ActivityIndicator>
+
+        </StackLayout>
+        <box-tracker-footer></box-tracker-footer>
+    </GridLayout>
+</ScrollView>
+
+
+

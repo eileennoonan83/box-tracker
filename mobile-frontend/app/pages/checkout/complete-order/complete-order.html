@@ -1,0 +1,35 @@
+<GridLayout class="m-10" rows="*,auto">
+    <ScrollView row="0" >
+        <StackLayout class="form">
+            <ActionBar class="action-bar" [title]="title"></ActionBar>
+
+            <StackLayout>
+                <StackLayout>
+                    <Label class="h2" text="Terms and Conditions"></Label>
+                    <TextView class="m-10 h3" [text]="terms"></TextView>
+                </StackLayout>
+                
+
+                <DrawingPad #DrawingPad 
+                    height="400" 
+                    id="drawingPad" 
+                    penColor="#000000" penWidth="3">
+                </DrawingPad>
+
+                <StackLayout orientation="horizontal">
+                    <Button text="Clear Signature" (tap)="clearSignature()"></Button>
+                </StackLayout>
+
+                <StackLayout orientation="horizontal" class="m-l-12">
+                    <Label text="I have given my signature and agree to the terms and conditions"></Label>
+                    <Switch #sw row="2" class="switch" col="2" [checked]="agreed" (checkedChange)="agreeSwitchChange(sw.checked)"></Switch>
+                </StackLayout>
+    
+                <Button [isEnabled]="readyToCompleteTransaction" class="btn btn-primary" text="Complete Order" (tap)="completeOrder()" row="3"></Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    
+    <box-tracker-footer></box-tracker-footer>
+</GridLayout>

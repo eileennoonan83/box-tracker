@@ -1,0 +1,104 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+For example, the following CSS rule changes the font size of all UI
+components that have the btn class name.
+*/
+.btn {
+    font-size: 18;
+}
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+@import 'nativescript-theme-core/css/core.light.css';
+@import url("~/platform.css");
+
+/*Page {
+    background-color: white;
+    font-size: 15;
+}
+*/
+
+
+@aqua: #6596aa;
+@blue: #2494f2;
+@gray: #a9a9a9;
+@lightgray: rgb(248, 248, 248);
+@green: #51b487;
+@danger: #f4645f;
+
+TextField {
+    padding: 10;
+    font-size: 13;
+    margin: 10px;
+}
+
+.card {
+    margin: 10px;
+    padding: 10px;
+    background-color: @lightgray;
+    border: 1px solid black;
+    border-radius: 3px;
+    border-color: @green;
+    border-width: 1px;
+ }
+
+ .btn {
+     &.btn-primary {
+         background-color: @aqua;
+         &.btn-danger {
+            background-color: @danger;
+         }
+     }
+     &.btn-danger {
+         background-color: @danger;
+     }
+ }
+
+ .table {
+     .table-header, .table-footer {
+         font-weight: bold !important;
+         font-size: 18 !important;
+     }
+
+     .table-header {
+         background-color: @gray;
+     }
+
+     .table-footer {
+         background-color: @aqua;
+     }
+
+     .table-row {
+        //  padding: 10px;
+        //  border-color: black;
+        //  border-width: 1px;
+
+         .table-cell {
+             border-color: black;
+             border-width: 1px;
+             padding:5px;
+         }
+     }
+ }
+
+ .login-form {
+     vertical-align: center;
+ }
+
+ .page-footer {
+     background-color: @gray;
+     width: 100%;
+ }
+
+ DrawingPad {
+     border-width: 1px;
+     border-color: black;
+ }

@@ -1,0 +1,22 @@
+<ScrollView>
+    <ActionBar class="action-bar" title="Sign In"></ActionBar>
+
+  <GridLayout rows="auto, auto, auto, auto" columns="*,*" class="form login-form">
+      
+      <Image row="0" src="res://logo" colSpan="2" stretch="none" horizontalAlignment="center"></Image>
+
+      <TextField row="1" class="input" colSpan="2" hint="Email Address" keyboardType="email"
+        autocapitalizationType="none" autocorrect="false" [(ngModel)]="user.email"></TextField>
+
+      <TextField row="2" class="input" colSpan="2" hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+
+
+      <Button width="200" row="3" col="0" horizontalAlignment="center" class="btn btn-primary" text="Submit" (tap)='signIn()'></Button>
+      <StackLayout orientation="horizontal" row="3" col="1">
+        <Switch #RememberMe  class="switch" [checked]="rememberMe" (checkedChange)="rememberMeSwitchChanged(RememberMe.checked)"></Switch>  
+        <Label text="Remember Me"></Label>
+      </StackLayout>
+
+
+  </GridLayout>
+</ScrollView>

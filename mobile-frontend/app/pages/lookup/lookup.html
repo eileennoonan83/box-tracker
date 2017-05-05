@@ -1,0 +1,21 @@
+<GridLayout rows="*, auto">
+    <GridLayout row="0" class="form" rows="auto,auto,auto,auto" columns="*,*" class="form" verticalAlignment="center">
+        <ActionBar class="action-bar" title="Customer Lookup"></ActionBar>
+
+        <Image src="res://logo" stretch="none" colSpan="2" horizontalAlignment="center"></Image>
+
+
+        <TextField class="input" row="1" hint="Customer name, email or phone" colSpan="2" keyboardType="email"
+            [(ngModel)]="search" autocapitalizationType="words" autocorrect="false"></TextField>
+
+        <Button row="2" [isEnabled]="search.length > 5" class="btn btn-primary" col="0" colSpan="1" text="Get Boxes" (tap)='getBoxes()'></Button>
+        <Button row="2" [isEnabled]="search.length > 5" class="btn btn-primary" col="1" colSpan="1" text="Return Boxes" (tap)='returnBoxes()'></Button>
+        
+    </GridLayout>
+
+    <box-tracker-footer></box-tracker-footer>
+    
+</GridLayout>
+
+
+

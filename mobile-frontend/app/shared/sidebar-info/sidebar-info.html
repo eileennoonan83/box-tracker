@@ -1,0 +1,21 @@
+<StackLayout class="sidebar-info" col="1">
+    <Label class="h2 m-t-10" [text]="box.customer.fullName"></Label>
+
+
+    <Label class="h2 m-t-10" text="Box Return Date"></Label>
+    <Label class="h3" *ngIf="box.returnScheduled" [text]="box.scheduledReturnDate"></Label>
+    <Label class="h3" *ngIf="!box.returnScheduled" text="---"></Label>
+
+    <Label class="h2 m-t-10" text="Contact Details"></Label>
+    <Label class="h3" [text]="box.customer.phone"></Label>
+    <Label class="h3" [text]="box.customer.email"></Label>
+
+    <StackLayout class="hr-dark"></StackLayout>
+
+    <Label class="h2 m-t-10" text="Selected Boxes"></Label>
+    <Label class="h3" *ngFor="let box of boxes" text="{{ box.quantity }} {{ box.label }} ({{ (box.cost / 100).toFixed(2) }} ea)"></Label>
+
+    <StackLayout class="hr-dark"></StackLayout>
+
+    <Label class="h2" id="total" [text]="total / 100 | currency:'USD':true"></Label>
+</StackLayout>

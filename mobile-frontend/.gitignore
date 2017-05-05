@@ -1,0 +1,8 @@
+node_modules
+lib
+platforms
+.vscode
+hooks
+.idea/
+app/**/*.js
+app/**/*.map

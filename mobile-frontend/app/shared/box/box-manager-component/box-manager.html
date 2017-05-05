@@ -1,0 +1,17 @@
+<GridLayout class="p-10" col="0" row="0" rows="auto, *" columns="3*">
+    <Label class="h1" colSpan="2" row="0" text="Select Boxes"></Label>
+    <Button class="btn" horizontalAlignment="right" [isEnabled]="changed" colSpan="1" row="0" text="(reset)" (tap)="reset()"></Button>
+    <WrapLayout row="1" orientation="horizontal">
+        <StackLayout class="single-item" *ngFor="let box of boxDisplay; let i = index;">
+                <TextField [ngModel]="box.quantity" (ngModelChange)="qtyChange($event, i)" keyboardType="phone"></TextField>
+                <!--<ListPicker     
+                    [items]="numbers[i]" 
+                    (ngModelChange)="qtyChange($event, i)" 
+                    [ngModel]="box.quantity" 
+                    showsSelectionIndicator="true"
+                    ></ListPicker>-->
+                <Label [text]="box.cost / 100 | currency:'USD':true"></Label>
+                <Label [text]="box.label" textWrap="true"></Label>
+            </StackLayout>
+    </WrapLayout>
+</GridLayout>

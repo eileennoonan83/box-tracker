@@ -1,0 +1,26 @@
+<GridLayout rows="*,auto">
+    <ScrollView>
+        <ActionBar class="action-bar" title="Select Payment Method"></ActionBar>
+        <StackLayout row="0" class="m-10">
+            <StackLayout class="m-10">
+                <Label class="h2" text="Credit Card"></Label>
+                <StackLayout (tap)=(selectCard(c)) class="card" *ngFor="let card of box.customer.cards; let c = index;">
+                    <Label text="Cardholder Name: {{ card.cardHolderName }}"></Label>
+                    <Label text="Card Type: {{ card.type }}"></Label>
+                    <Label text="Expiration Date: {{ card.expirationDate }}"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Button class="btn btn-primary" text="Enter a New Card" (tap)="newCard()"></Button>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout class="hr-dark"></StackLayout>
+
+            <StackLayout class="m-10">
+                <Label class="h2" text="Cash"></Label>
+                <Button class="btn btn-primary" text="Pay With Cash" (tap)="payWithCash()"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    <box-tracker-footer></box-tracker-footer>
+</GridLayout>

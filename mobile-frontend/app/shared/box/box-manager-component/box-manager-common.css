@@ -1,0 +1,7 @@
+.single-item {
+  display: block;
+  width: 33.333%;
+  text-align: center;
+  /*height:200px;*/
+  margin: auto;
+}

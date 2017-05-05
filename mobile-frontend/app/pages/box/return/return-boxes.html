@@ -1,0 +1,35 @@
+<GridLayout rows="*, auto">
+    <ScrollView>
+        <ActionBar class="action-bar" title="Boxes Coming In"></ActionBar>
+
+        <GridLayout rows="auto, *, *, auto" columns="2*, *">
+
+            <box-manager
+                [(boxes)]="boxes" 
+                [(total)]="refund"
+                [options]="box.options"
+                (onTotalChange$)="onTotalChange($event)"
+                (onBoxesChange$)="onBoxesChange($event)"
+                isReturning="true">
+            </box-manager>
+
+            <StackLayout class="sidebar" col="1">
+
+                <sidebar-info 
+                    [box]="box" 
+                    [boxes]="boxes"
+                    [total]="refund">
+                </sidebar-info>
+                
+                <StackLayout col="1">
+                    <Button class="btn btn-primary" text="Checkout" (tap)="checkout()" row="1"></Button>
+                    <Button class="btn btn-primary btn-danger" text="Forfeit Refund" (tap)="forfeitRefund()" row="2"></Button>
+                </StackLayout>
+
+            </StackLayout>
+        </GridLayout>
+    </ScrollView>
+    <box-tracker-footer></box-tracker-footer>
+</GridLayout>
+    
+

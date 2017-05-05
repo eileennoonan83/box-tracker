@@ -1,0 +1,21 @@
+<GridLayout rows="*,auto">
+    <ScrollView row="0">
+        <StackLayout row="0" rows="auto,auto" class="m-10">
+            <ActionBar class="action-bar" title="Which Customer?"></ActionBar>
+
+            <TextView row="1" class="h2" isEditable="false" [text]="helpText"></TextView>
+
+            <StackLayout row="1" class="m-10" *ngFor="let customer of customers" (tap)="select(customer)">
+                <StackLayout class="card">
+                    <Label class="h2" [text]="customer.fullName"></Label>
+                    <Label class="h3" [text]="customer.email"></Label>
+                    <Label class="h3" [text]="customer.phone"></Label>
+                </StackLayout>
+                <StackLayout class="hr-dark"></StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+    <box-tracker-footer></box-tracker-footer>
+</GridLayout>
+

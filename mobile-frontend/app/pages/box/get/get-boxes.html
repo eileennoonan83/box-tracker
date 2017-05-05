@@ -1,0 +1,39 @@
+<GridLayout rows="*, auto">
+    <ScrollView>
+        <ActionBar class="action-bar" title="Boxes Going Out"></ActionBar>
+
+        <GridLayout rows="auto, *, *, auto" columns="2*, *">
+
+            <box-manager
+                #boxManager
+                [(boxes)]="boxes" 
+                [(total)]="total"
+                [options]="box.options"
+                (onTotalChange$)="onTotalChange($event)"
+                (onBoxesChange$)="onBoxesChange($event)">
+            </box-manager>
+
+            <StackLayout class="sidebar" col="1">
+
+                <sidebar-info 
+                    [box]="box" 
+                    [boxes]="boxes"
+                    [total]="total">
+                </sidebar-info>
+                <StackLayout class="hr-dark m-t-10"></StackLayout>
+                <StackLayout col="1">
+                    <Label class="h2 m-t-10" text="Return Date"></Label>
+                    <date-picker
+                        [(ngModel)]="box.scheduledReturnDateObject"
+                        [minDate]="minReturnDate"
+                        [maxDate]="maxReturnDate">
+                    </date-picker>
+                    <Button class="btn btn-primary" text="Checkout" (tap)="checkout()" row="1"></Button>
+                </StackLayout>
+
+            </StackLayout>
+        </GridLayout>
+    </ScrollView>
+    <box-tracker-footer colSpan="3"></box-tracker-footer>
+    
+</GridLayout>
