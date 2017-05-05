@@ -2,7 +2,7 @@ Hello! I built this application for a local moving company to help them run thei
 
 Customers come in and pick up boxes, and return them later for a refund. They can also purchase non-refundable supplies like packing tape. The application manages pickups and returns, as well as credit card charges, refunds, and pre-authorizations. 
 
-The UI is optimized for speed and ease of use for workers over the long term, not for beauty. That said, it still needs help from a designer - but cost is always a factor and this client highly prioritizes function over form.
+The UI is optimized for speed and ease of use for workers over the long term, not for beauty. It would benefit from design intervention. But cost is always a factor and this client highly prioritizes function over form.
 
 Included here is the mobile frontend, written with NativeScript+Angular+TypeScript, and the API backend,  uses Laravel. The app is in Laravel 5 currently, but it was initiated in Laravel 4, so you may notice some outdated conventions.
 
