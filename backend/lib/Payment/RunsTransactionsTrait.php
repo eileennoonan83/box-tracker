@@ -130,7 +130,6 @@ trait RunsTransactionsTrait
      */
     private function getTransactionChargeDescriptions()
     {
-        // RUN THE CHARGE
         $desc_input = request('description');
 
         return new ChargeDescriptionCollection([
@@ -175,7 +174,7 @@ trait RunsTransactionsTrait
         );
 
         if ($validator->fails()) {
-            // really just want the messages though ...
+            // really just want the messages ...
             $errors = array_values(array_flatten($validator->getMessageBag()->all()));
             return new ValidationFailedResponse($errors);
         } else {
