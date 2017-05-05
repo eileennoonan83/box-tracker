@@ -211,7 +211,6 @@ export class CompleteOrderComponent implements OnInit {
                     dialogs.alert("Signature must not be empty").then(() => {
                         this.agreed = false;
                     });
-                    console.log("error", err)
                 });        
         }
     }

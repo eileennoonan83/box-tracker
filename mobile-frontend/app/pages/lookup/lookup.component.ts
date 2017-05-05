@@ -101,7 +101,6 @@ export class LookupComponent {
                 return;
             }
         } else {
-            console.log(JSON.stringify(error));
             dialogs.alert('An unknown error occurred, failed to load results');
         }
     }

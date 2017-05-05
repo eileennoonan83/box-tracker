@@ -38,7 +38,6 @@ export class BaseService {
     }
 
     protected handleErrors = function(error: Response) {
-        // console.log(JSON.stringify(error));
         return Observable.throw(error);
     }
 }

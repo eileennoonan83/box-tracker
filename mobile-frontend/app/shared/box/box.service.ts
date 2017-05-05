@@ -40,7 +40,6 @@ export class BoxService extends BaseService implements OnLogOut, OnCancel {
     clearUnreturnedBoxes(box: BoxProfile) : Observable<BoxProfile> {
         let url = this.apiUrl + "/freeBox/" + this.box.id + "/clearUnreturned",
             http_options = this.options();
-            console.log("Clearing unreturned", url, JSON.stringify(http_options));
         return this.http.patch(url, {}, http_options)
             .catch(this.handleErrors);
     }
@@ -51,8 +50,6 @@ export class BoxService extends BaseService implements OnLogOut, OnCancel {
             url = this.apiUrl + "/freeBox/" + this.box.id + "/" + lastUrlSegment;
 
         this._stored_options = this.box.options;
-
-        console.log(url, JSON.stringify(data));
 
         return this.http.patch(url, data, http_options)
             .map(this.handleSingleBoxSuccess)

@@ -31,7 +31,6 @@ export class BoxManagerConfigService {
         } else if (isNull) {
             this._config = this._generateNonZeroConfig();
         } else {
-            console.log("RETURNING CONFIG");
             this._config = this._generateReturningConfig();
         }
 
@@ -73,7 +72,6 @@ export class BoxManagerConfigService {
             }),
             numbers = this._config.numbers;
 
-        console.log(JSON.stringify(boxes));
         return new BoxManagerConfig(options, numbers);
     }
 

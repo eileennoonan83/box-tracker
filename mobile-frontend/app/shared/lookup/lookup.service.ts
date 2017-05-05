@@ -45,7 +45,6 @@ export class LookupService extends BaseService {
 
     private customerSearch(url) : Observable<Array<Customer>> {
         let options = { headers: this.getHeaders(this.auth.getUser()) };
-        console.log(url);
 
         this.indicator.show({message: "Looking up customer ..."})
 
@@ -73,8 +72,6 @@ export class LookupService extends BaseService {
         
         this.indicator.show({message: "Loading ..."});
 
-        [url,headers].map(el => console.log(JSON.stringify(el)) );
-        
         return this.http.get(url, { headers: headers })
             .map((response: Response) => {
                 this.indicator.hide();

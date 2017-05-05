@@ -58,11 +58,9 @@ export class PaymentMethodSelectComponent implements OnInit {
                     let box = this.box;
                     box.customer.billingAddress = billingAddress;
                     this.boxService.setBoxProfile(box);
-                    console.log(JSON.stringify(box));
                     this.router.navigate(["/payment.newCreditCard"]);                 },
                 (err: Response) => {
-                    console.log(JSON.stringify("ERROR"), JSON.stringify(err));
-
+                    dialogs.alert("Error: "+JSON.stringify(err));
                     this.router.navigate(["/payment.newCreditCard"]); 
                 }
             )
