@@ -1,6 +1,6 @@
 Hello! I built this application for a local moving company to help them run their free box program. The app is intended to be used by workers in a warehouse while interfacing directly with customers. 
 
-Customers come in and pick up boxes, and return them later for a refund. They can also purchase non-refundable supplies like packing tape. It also manages credit card charges, refunds, and pre-authorizations. 
+Customers come in and pick up boxes, and return them later for a refund. They can also purchase non-refundable supplies like packing tape. The applicatin manages pickups and returns, as well as credit card charges, refunds, and pre-authorizations. 
 
 The UI is optimized for speed and ease of use for workers over the long term, not for beauty. That said, it still needs help from a designer - but cost is always a factor and this client highly prioritizes function over form.
 
