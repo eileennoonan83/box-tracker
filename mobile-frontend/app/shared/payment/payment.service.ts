@@ -35,7 +35,6 @@ export class PaymentService extends BaseService implements OnLogOut, OnCancel {
             .map((res: Response) => {
                 let data = res.json(),
                     card = CreditCard.make(data.card);
-                console.log(JSON.stringify(data));
                 return card;
             })
             .catch(this.handleErrors);
@@ -98,8 +97,6 @@ export class PaymentService extends BaseService implements OnLogOut, OnCancel {
                 signature: charge.signature.base64
             };
 
-        [url, options, data].map(el => console.log(JSON.stringify(el)));
-            
         return this.http.post(url, data, options)
             .catch(this.handleErrors)
     }
@@ -107,7 +104,6 @@ export class PaymentService extends BaseService implements OnLogOut, OnCancel {
     getCustomerLikelyBillingAddress(customer: Customer) : Observable<BillingAddress> {
         let url = this.apiUrl + "/customer/" + customer.id + "/creditCard/likelyBillingAddress",
             options = { headers: this.getHeaders(this.auth.getUser()) };
-            console.log(url);
         return this.http.get(url, options)
             .map((res: Response) => {
                 let data = res.json(),
